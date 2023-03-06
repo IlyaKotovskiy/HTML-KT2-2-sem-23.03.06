@@ -1,0 +1,154 @@
+:root {
+    --bg: #212121;
+    --border-radius: 8px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+body {
+    background-color: rgb(23, 23, 23);
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data {
+    display: flex;
+    gap: 50px;
+}
+
+.data-clients,
+.data-services {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.data-clients__client {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg);
+    border-radius: var(--border-radius);
+}
+
+.data-clients__client::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('arrow-double-end-svgrepo-com.png');
+    background-size: cover;
+    position: absolute;
+    right: -50px;
+    transform: translateX(-50%);
+}
+
+.data-clients__client:first-child::after {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.data-clients__client:last-child::after {
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.data__gateway,
+.data__server {
+    width: 150px;
+    height: calc(300px + 50px * 2);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg);
+    border-radius: var(--border-radius);
+}
+
+.data__gateway::before {
+    content: 'Gateway';
+}
+
+.data__server::before {
+    content: 'Server';
+}
+
+.data__gateway::before,
+.data__server::before {
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 40px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    opacity: .8;
+}
+
+.data__gateway::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('arrow-double-end-svgrepo-com.png');
+    background-size: cover;
+    position: absolute;
+    right: -50px;
+    transform: translateX(-50%);
+}
+
+.data-services__service {
+    width: 350px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+    background-color: var(--bg);
+    border-radius: var(--border-radius);
+}
+
+.data-services__service::before {
+    content: 'Service';
+    text-transform: uppercase;
+    position: absolute;
+    right: 30px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    opacity: .8;
+}
+
+.data-services__service:not(:last-child):after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('arrow-double-end-svgrepo-com.png');
+    background-size: cover;
+    position: absolute;
+    left: -50px;
+    transform: translateX(50%);
+}
+
+.data-services__service:first-child::after {
+    transform: translateX(50%) rotate(-45deg);
+}
+
+.data-services__service:nth-child(3)::after {
+    transform: translateX(50%) rotate(45deg);
+}
